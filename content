@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esha Somadder Maniar — Content Specialist &amp; Content Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Inter:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; }
+  .es-portfolio {
+    --ink: #14213D;
+    --paper: #FAF8F3;
+    --gold: #B8860B;
+    --slate: #55606E;
+    --line: #DED8C9;
+    --up: #1F6F4F;
+
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 28px 90px;
+    line-height: 1.65;
+  }
+  .es-portfolio * { box-sizing: border-box; }
+
+  /* Hero */
+  .es-hero { margin-bottom: 64px; }
+  .es-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .es-eyebrow::before { content: ""; width: 22px; height: 1px; background: var(--gold); display: inline-block; }
+  .es-hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 1.1;
+    margin: 0 0 18px;
+  }
+  .es-hero h1 em { font-style: italic; color: var(--gold); }
+  .es-hero p {
+    font-size: 17px;
+    color: var(--slate);
+    max-width: 680px;
+    margin: 0 0 24px;
+  }
+  .es-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .es-tags span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    padding: 6px 13px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: #fff;
+  }
+
+  /* Nav strip */
+  .es-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 60px;
+  }
+  .es-nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .es-nav a:hover { border-bottom-color: var(--gold); }
+
+  /* Case study block */
+  .es-case { margin-bottom: 70px; scroll-margin-top: 20px; }
+  .es-case-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+  }
+  .es-case-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0;
+  }
+  .es-case-head .role {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slate);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .es-case > p.summary { color: #2B2E33; margin: 0 0 22px; max-width: 700px; }
+
+  .es-subhead {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    margin: 26px 0 10px;
+  }
+
+  .es-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .es-list li { padding-left: 22px; position: relative; color: #2B2E33; }
+  .es-list li::before { content: "—"; position: absolute; left: 0; color: var(--gold); font-family: 'IBM Plex Mono', monospace; }
+
+  .es-niches { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .es-niches span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    padding: 5px 11px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: #fff;
+  }
+
+  .es-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .es-links li a {
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    display: inline-block;
+    padding-bottom: 1px;
+  }
+  .es-links li a:hover { border-bottom-color: var(--gold); }
+  .es-links li a::before { content: "↗ "; color: var(--gold); }
+
+  .es-note {
+    font-size: 13px;
+    color: var(--slate);
+    font-style: italic;
+    border-left: 2px solid var(--line);
+    padding-left: 14px;
+    margin-top: 18px;
+  }
+
+  /* Featured article card (Equitypandit) */
+  .es-feature {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold);
+    padding: 26px;
+    border-radius: 4px;
+    margin-top: 22px;
+  }
+  .es-feature .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .es-feature h3 { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; margin: 0 0 12px; }
+  .es-feature p { margin: 0 0 16px; color: #2B2E33; }
+  .es-stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; margin: 16px 0 18px; }
+  .es-stat { font-family: 'IBM Plex Mono', monospace; padding: 12px 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; }
+  .es-stat .num { font-size: 19px; font-weight: 500; display: block; }
+  .es-stat .num.up { color: var(--up); }
+  .es-stat .cap { font-size: 10px; color: var(--slate); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  @media (max-width: 600px) {
+    .es-portfolio { padding: 40px 18px 60px; }
+    .es-hero h1 { font-size: 32px; }
+    .es-case-head h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="es-portfolio">
+
+  <!-- HERO -->
+  <div class="es-hero">
+    <div class="es-eyebrow">Portfolio</div>
+    <h1>Esha Somadder Maniar — <em>Content Specialist</em> &amp; Content Manager</h1>
+    <p>My projects have served global audiences across the US, UK, India, and Australia through cutting-edge SEO, AEO, and GEO strategies — from rigorous website audits, research, and content strategy to high-impact content execution, including working with AI automation tools to analyse and develop content for digital platforms.</p>
+    <div class="es-tags">
+      <span>Content Strategy</span>
+      <span>On-Page SEO</span>
+      <span>AEO / GEO</span>
+      <span>WordPress</span>
+      <span>Website Audits</span>
+      <span>Social Media Content</span>
+      <span>Email Marketing</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <div class="es-nav">
+    <a href="#webledger">Webledger</a>
+    <a href="#equitypandit">Equitypandit</a>
+    <a href="#penguinpeak">Penguinpeak Technologies</a>
+    <a href="#chegg">Chegg India</a>
+    <a href="#wortal">Wortal CRM</a>
+  </div>
+
+  <!-- WEBLEDGER -->
+  <div class="es-case" id="webledger">
+    <div class="es-case-head">
+      <h2>Webledger</h2>
+      <span class="role">Content Specialist</span>
+    </div>
+    <p class="summary">Webledger is an Indian B2B IT products company that has built two cloud accounting software products — Webledger Books and Webledger Office. I developed original website content, blogs, newsletters, and social media content, working closely with the product, SEO, and design teams.</p>
+
+    <div class="es-subhead">Website Content &amp; Landing Pages</div>
+    <p style="color:#2B2E33; margin:0 0 10px;">Original content developed after in-depth discussion with the product team, top management, SEO team, and UI/UX designers.</p>
+    <ul class="es-links">
+      <li><a href="https://webledger.in/accounting/" target="_blank" rel="noopener">Accounting — Landing Page</a></li>
+      <li><a href="https://webledger.in/practice-management/" target="_blank" rel="noopener">Practice Management — Landing Page</a></li>
+      <li><a href="https://webledger.in/retail-loan/" target="_blank" rel="noopener">Retail Loan — Landing Page</a></li>
+      <li><a href="https://webledger.in/books-gst/" target="_blank" rel="noopener">Books GST — Landing Page</a></li>
+      <li><a href="https://webledger.in/multi-branch-accounting/" target="_blank" rel="noopener">Multi-Branch Accounting — Landing Page</a></li>
+      <li><a href="https://webledger.in/e-invoicing/" target="_blank" rel="noopener">E-Invoicing — Landing Page</a></li>
+    </ul>
+
+    <div class="es-subhead">Newsletters</div>
+    <ul class="es-links">
+      <li><a href="https://www.linkedin.com/pulse/understanding-rbis-repo-rate-cut-its-impact-india-amidst-global-4h4hc" target="_blank" rel="noopener">Understanding RBI's Repo Rate Cut and its Impact on India Amidst Global Trade Tensions</a></li>
+      <li><a href="https://www.linkedin.com/pulse/webledger-books-your-all-in-one-cloud-accounting-solution-business-xvsbf" target="_blank" rel="noopener">WebLedger Books: Your All-in-One Cloud Accounting Solution</a></li>
+      <li><a href="https://www.linkedin.com/pulse/efficiency-redefined-webledger-tools-webledger-yhqif" target="_blank" rel="noopener">Efficiency Redefined: WebLedger Tools</a></li>
+      <li><a href="https://www.linkedin.com/pulse/your-may-2025-compliance-productivity-update-two-powerful-new-y8fnf" target="_blank" rel="noopener">Your May 2025 Compliance &amp; Productivity Update</a></li>
+    </ul>
+
+    <div class="es-subhead">Social Media Strategy</div>
+    <p style="color:#2B2E33; margin:0 0 10px;">Developed monthly content calendars with the Marketing Head, top management, and product team — mainly for Instagram and LinkedIn.</p>
+    <ul class="es-links">
+      <li><a href="https://www.linkedin.com/posts/webledger_webledger-didyouknow-compliancetracking-activity-7358496666930364416-EDFj" target="_blank" rel="noopener">LinkedIn — Compliance Tracking</a></li>
+      <li><a href="https://www.linkedin.com/posts/webledger_compliancecalendar-caproductivity-taskautomation-activity-7357028024363438082-xBw6" target="_blank" rel="noopener">LinkedIn — Compliance Calendar</a></li>
+      <li><a href="https://www.linkedin.com/posts/webledger_pas6-roccompliance-companylaw-activity-7355603242824720385-jleV" target="_blank" rel="noopener">LinkedIn — PAS-6 &amp; ROC Compliance</a></li>
+      <li><a href="https://www.linkedin.com/posts/webledger_webledgerbooks-gstfiling-cloudaccounting-activity-7353782613934768129-EQAS" target="_blank" rel="noopener">LinkedIn — GST Filing</a></li>
+    </ul>
+
+    <div class="es-subhead">Also Handled</div>
+    <ul class="es-list">
+      <li>Content for Google My Business (GMB) profile</li>
+      <li>Content for business listing websites</li>
+      <li>Email marketing using Brevo</li>
+    </ul>
+  </div>
+
+  <!-- EQUITYPANDIT -->
+  <div class="es-case" id="equitypandit">
+    <div class="es-case-head">
+      <h2>Equitypandit</h2>
+      <span class="role">Content Specialist</span>
+    </div>
+    <p class="summary">Equitypandit is a SEBI-registered company providing financial services in India. I researched, wrote, edited, and published daily news content via WordPress — covering financial markets, fintech, and the wider economy — while handling on-page SEO with Yoast for every piece.</p>
+
+    <div class="es-subhead">Role &amp; Responsibilities</div>
+    <ul class="es-list">
+      <li>Researched, wrote, and published a minimum of 7 SEO-optimized articles daily via WordPress</li>
+      <li>Applied on-page SEO best practices using Yoast SEO for every article</li>
+      <li>Repurposed published articles into social media post copy</li>
+      <li>Coordinated with the SEO and design teams; reported to senior editor</li>
+    </ul>
+    <div class="es-niches">
+      <span>Financial Markets</span><span>Fintech</span><span>IT Services</span><span>IT Products</span>
+      <span>Indian Economy</span><span>International Affairs</span><span>National Affairs</span>
+    </div>
+
+    <div class="es-feature">
+      <div class="kicker">Featured Article</div>
+      <h3>Top Indian Stocks to Benefit on FII Boost from MSCI Rejig</h3>
+      <p>A data-driven breakdown of MSCI's May 2024 rejig of the India index — covering added and removed stocks, sector weight shifts, and projected foreign institutional investment (FII) inflows.</p>
+      <div class="es-stat-row">
+        <div class="es-stat"><span class="num up">19%</span><span class="cap">India's new MSCI EM weight</span></div>
+        <div class="es-stat"><span class="num">13</span><span class="cap">Stocks added to index</span></div>
+        <div class="es-stat"><span class="num">$2.5B</span><span class="cap">Projected FII inflow</span></div>
+        <div class="es-stat"><span class="num">149</span><span class="cap">India stocks in MSCI Standard</span></div>
+      </div>
+      <p class="es-note" style="margin-top:0;">Replace this block with a link to the live article, or a screenshot — the original included detailed stock tables best shown as an image.</p>
+    </div>
+  </div>
+
+  <!-- PENGUINPEAK -->
+  <div class="es-case" id="penguinpeak">
+    <div class="es-case-head">
+      <h2>Penguinpeak Technologies</h2>
+      <span class="role">Content Manager</span>
+    </div>
+    <p class="summary">Penguinpeak Technologies develops customised IT products and services, and offers digital marketing services (performance marketing, design, PPC, content, SEO) for national and international clients. As Content Manager, I formed content strategy, audited existing websites, and rewrote content to rank on Google — working mainly on Australian client projects.</p>
+
+    <div class="es-subhead">Process</div>
+    <ul class="es-list">
+      <li>Audited existing website content to identify content, SEO, AEO, and GEO gaps</li>
+      <li>Rewrote content to improve rankings, based on audit findings</li>
+      <li>Coordinated with the Australian team and SEO Manager on content direction</li>
+      <li>Occasionally developed and published original content for new pages</li>
+    </ul>
+
+    <div class="es-subhead">Client Niches (Australia-focused)</div>
+    <div class="es-niches">
+      <span>IT Services</span><span>Finance</span><span>Metal Waste Management</span><span>Blinds &amp; Curtains</span>
+      <span>Electricals</span><span>Emergency Towing</span><span>Conveyancing</span><span>Beauty &amp; Aesthetics</span>
+      <span>Digital Marketing</span><span>Health &amp; Fitness</span><span>Tree Management</span><span>Doors &amp; Windows</span>
+      <span>Cab Service</span><span>Roof Restoration</span><span>Insulation</span><span>Painting Service</span>
+    </div>
+
+    <div class="es-subhead">Content Work</div>
+    <ul class="es-list">
+      <li>Website audits, content strategy, and SEO-AEO-GEO driven content development</li>
+      <li>Blogs, email marketing (Omnisend), LinkedIn content, GMB posts, business listing content</li>
+      <li>Built a custom keyword density analyser tool using Claude AI — using keyword proximity concepts alongside exact-match, aligned to EEAT guidelines to keep density between 0.5%–1.60%</li>
+    </ul>
+
+    <p class="es-note">Client work and client websites are confidential under this employer's policy — only the type of content produced for Australian and UK clients is shared here.</p>
+  </div>
+
+  <!-- CHEGG -->
+  <div class="es-case" id="chegg">
+    <div class="es-case-head">
+      <h2>Chegg India</h2>
+      <span class="role">Content Specialist</span>
+    </div>
+    <p class="summary">Chegg is a US-based ed-tech company providing tutoring services to students and professionals worldwide, with a branch in Delhi, India. I researched blog topics assigned by the SEO team, developed SEO-friendly content, and published it on the company's WordPress site — handling on-page SEO before publishing.</p>
+  </div>
+
+  <!-- WORTAL -->
+  <div class="es-case" id="wortal">
+    <div class="es-case-head">
+      <h2>Wortal CRM</h2>
+      <span class="role">Content Manager</span>
+    </div>
+    <p class="summary">Wortal CRM is a cloud CRM software product built by an Indian company's in-house developers. I developed the original (v2) website content and a monthly social media content calendar, coordinating with the Marketing Head, product team, and design team.</p>
+
+    <div class="es-subhead">Blog Content</div>
+    <ul class="es-links">
+      <li><a href="https://wortal.co/blog/" target="_blank" rel="noopener">Wortal Blog — Homepage</a></li>
+      <li><a href="https://wortal.co/blogs/why-you-need-a-flexible-crm-system/" target="_blank" rel="noopener">Why You Need a Flexible CRM System</a></li>
+      <li><a href="https://wortal.co/blogs/how-task-management-improves-team-output/" target="_blank" rel="noopener">How Task Management Improves Team Output</a></li>
+      <li><a href="https://wortal.co/blogs/how-to-track-sales-opportunities-like-a-pro/" target="_blank" rel="noopener">How to Track Sales Opportunities Like a Pro</a></li>
+      <li><a href="https://wortal.co/blogs/why-centralised-contact-management-matters/" target="_blank" rel="noopener">Why Centralised Contact Management Matters</a></li>
+      <li><a href="https://wortal.co/blogs/how-real-estate-crm-closes-deals-faster/" target="_blank" rel="noopener">How Real Estate CRM Closes Deals Faster</a></li>
+      <li><a href="https://wortal.co/blogs/how-crm-improves-business-communication-and-collaboration/" target="_blank" rel="noopener">How CRM Improves Business Communication &amp; Collaboration</a></li>
+      <li><a href="https://wortal.co/blogs/crm-and-marketing-automation-a-winning-combination/" target="_blank" rel="noopener">CRM and Marketing Automation: A Winning Combination</a></li>
+    </ul>
+
+    <div class="es-subhead">Social Media &amp; Newsletters</div>
+    <ul class="es-links">
+      <li><a href="https://www.linkedin.com/posts/wortal-crm_manual-work-late-follow-ups-lost-sales-activity-7358860328866136064-ZgKZ" target="_blank" rel="noopener">LinkedIn — Manual Work &amp; Lost Sales</a></li>
+      <li><a href="https://www.linkedin.com/posts/wortal-crm_wortalcrm-crmupdates-businessgrowth-activity-7357040703996088321-dgh9" target="_blank" rel="noopener">LinkedIn — CRM Updates &amp; Business Growth</a></li>
+      <li><a href="https://www.linkedin.com/pulse/explore-wortal-crm-wortal-crm-6moef" target="_blank" rel="noopener">Newsletter — Explore Wortal CRM</a></li>
+    </ul>
+
+    <div class="es-subhead">Also Handled</div>
+    <ul class="es-list">
+      <li>Email marketing content on the Brevo platform</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
